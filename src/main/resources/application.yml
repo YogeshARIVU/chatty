@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/chatapp
-    username: postgres
-    password: Yogesh#1409
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -16,9 +16,10 @@ spring:
 
   flyway:
     enabled: false
+
 jwt:
-  secret: "bXlTdXBlclNlY3VyZUp3dFNlY3JldEtleUZvckNIYXRBcHBsaWNhdGlvblRoYXRJc0F0TGVhc3Q2NEJ5dGVzTG9uZ0FuZFNlY3VyZQ=="
-  expiration: 86400
+  secret: ${JWT_SECRET}
+  expiration: ${JWT_EXPIRATION:86400}  # default 1 day
 
 logging:
   level:
